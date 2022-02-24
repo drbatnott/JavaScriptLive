@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>A Demo Page for JavaScript</title>
+</head>
+<body>
+    <h1 id="demo1">This is my first Line of Text</h1>
+
+    <img id="blue" src="Gradient.png" alt="blue patch" style="width:200px" /><br />
+    <button onclick="document.getElementById('blue').src='Gradient1.png'">Vertical</button>
+    <button onclick="document.getElementById('blue').src='Gradient.png'">Horizontal</button><br />
+    <button onclick="document.getElementById('demo1').style.fontSize='40px'">Large</button>
+    <button onclick="document.getElementById('demo1').style.fontSize='20px'">Small</button>
+
+    <p>This line will be unchanged</p>
+    <h2 id="demo2">
+        The variables are:<br />
+    </h2>
+    <p id="demo3">Inner HTML Will be Changed to add:<br /></p>
+    <script>
+        let x = 1;
+        var y = 2;
+        const z = 3;
+        y = x + z;
+        document.getElementById("demo2").innerHTML += " x " + x + "<br/>y " + y + "<br/>z " + z;
+        document.getElementById("demo1").innerHTML = "Hello Java Script World";
+        const names = ["fred", "john", "paul", "ringo", 4];
+        for (x = 0; x < names.length; x++) {
+            document.getElementById("demo3").innerHTML += names[x] + "<br/>";
+        }
+        document.getElementById("demo3").innerHTML += "Data type of names is " + typeof (names) + "<br/>";
+        document.getElementById("demo3").innerHTML += "Data type of  names members [0] is " + typeof (names[0]) + "<br/>";
+        document.getElementById("demo3").innerHTML += "Data type of  names members [4] is " + typeof (names[4]);
+
+    </script>
+</body>
+</html>
