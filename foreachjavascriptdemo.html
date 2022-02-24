@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Iterations</title>
+    <script>
+        //The following function will be iterated through by the forEach acting on stringThings
+        function myFunction1(value,index) {
+            txt += "Item " + index + " " + value + "<br/>";
+        }
+        function myFunction2(array) {
+            txt1 += " " + array + "<br/>";
+        }
+        function myMappingScript(value, index, array) {
+            return value ** 2;
+        }
+        function myMappingScript2(value, index, array) {
+            return value ** index;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="demo1">This is my first Line of Text</h1>
+    <h1 id="demo2">This is another line of text</h1>
+    <h1 id="demo3">Yet Another Line</h1>
+    <h1 id="demo4">One More Line</h1>
+    <h1 id="demo5">Nothing Needed</h1>
+   
+
+    <a href="index.html">Return To Index</a>
+    <script>
+        const stringThings = ["john", "paul", "george", "ringo"];
+        const numberThings = [16, 32, 24, 96, 123, 8];
+        const numberThingsSquared = numberThings.map(myMappingScript);
+        const numberThingsToIndex = numberThings.map(myMappingScript2);
+        document.getElementById("demo3").innerHTML = numberThings;
+        document.getElementById("demo4").innerHTML = numberThingsSquared;
+        document.getElementById("demo5").innerHTML = numberThingsToIndex;
+        let txt = "";
+        stringThings.forEach(myFunction1);
+        document.getElementById("demo1").innerHTML = txt;
+        let txt1 = "";
+        stringThings.forEach(myFunction2); 
+        document.getElementById("demo2").innerHTML = txt1;
+
+    </script>
+</body>
+</html>
