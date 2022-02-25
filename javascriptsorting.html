@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Sorting</title>
+    <script>
+        //The following function will be iterated through by the forEach acting on stringThings
+        
+        function ReduceArrayRight(output, value, index, array) {
+            return output + value;
+        }
+
+        function ReduceToMinimum(output, value, index, array){
+            if (value < output)
+                return value;
+            else
+                return output;
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <h1 id="demo1">This is my first Line of Text</h1>
+    <h1 id="demo5">The numbers array </h1>
+    <h1 id="demo2">The minimum is </h1>
+    <h1 id="demo7">The concatinated array backwards is </h1>
+    <h1 id="demo8">Is the sum of my numbers </h1>
+    <h1 id="demo3">The sorted string array is </h1>
+    <h1 id="demo6">The reversed string array is </h1>
+    <h1 id="demo4">The sorted numbers as strings is </h1>
+    <h1 id="demo9">The reversed number array is </h1>
+    <h1 id="demo10">The properly sorted numbers are </h1>
+    <h1 id="demo11">This reveresed is </h1>
+    <a href="index.html">Return To Index</a>
+    <script>
+        const stringThings = ["john", "paul", "george", "ringo"];
+        const numberThings = [16, 32, 8, 96, 123, 84, 8];
+
+        let outputString = stringThings.reduceRight(ReduceArrayRight);
+        document.getElementById("demo7").innerHTML += outputString;
+        let sum = numberThings.reduceRight(ReduceArrayRight);
+        document.getElementById("demo8").innerHTML += sum;
+        let answer = numberThings.reduceRight(ReduceToMinimum);
+        document.getElementById("demo2").innerHTML += answer;
+        document.getElementById("demo1").innerHTML = stringThings;
+        document.getElementById("demo5").innerHTML += numberThings;
+        stringThings.sort();
+        document.getElementById("demo3").innerHTML += stringThings;
+        numberThings.sort();
+        document.getElementById("demo4").innerHTML += numberThings;
+        stringThings.reverse();
+        document.getElementById("demo6").innerHTML += stringThings;
+        numberThings.reverse();
+        document.getElementById("demo9").innerHTML += numberThings;
+        /*If b is bigger than a this will return a +ve answer
+         * if b is smaller it will return -ve and if they are the same it will
+         * return zero
+         * */
+        numberThings.sort(function(a, b) {return b - a;});
+        document.getElementById("demo10").innerHTML += numberThings;
+        numberThings.reverse();
+        document.getElementById("demo11").innerHTML += numberThings;
+    </script>
+</body>
+</html>
