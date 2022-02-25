@@ -21,6 +21,9 @@
         function LessThan32Filter(value, index, array) {
             return value < 32;
         }
+        function ReduceArray(output, value, index, array) {
+            return output + value;
+        }
     </script>
 </head>
 <body>
@@ -30,7 +33,8 @@
     <h1 id="demo4">One More Line</h1>
     <h1 id="demo5">Nothing Needed</h1>
     <h1 id="demo6">For the filtered array</h1>
-
+    <h1 id="demo7">My concatinated string is </h1>
+    <h1 id="demo8">The sum of my numbers is </h1>
     <a href="index.html">Return To Index</a>
     <script>
         const stringThings = ["john", "paul", "george", "ringo"];
@@ -48,7 +52,10 @@
         let txt1 = "";
         stringThings.forEach(myFunction2); 
         document.getElementById("demo2").innerHTML = txt1;
-
+        let outputString = stringThings.reduce(ReduceArray);
+        document.getElementById("demo7").innerHTML += outputString;
+        let sum = numberThings.reduce(ReduceArray);
+        document.getElementById("demo8").innerHTML += sum;
     </script>
 </body>
 </html>
