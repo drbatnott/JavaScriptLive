@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Sorting</title>
+    <script>
+        
+        
+    </script>
+</head>
+<body>
+    <h1 id="demo1">My first JavaScript Object </h1>
+    <h1 id="demo2">My first JavaScript Object used like an object</h1>
+    <h1 id="demo3">My first JavaScript Object using a function </h1>
+    <h1 id="demo4">Array of Cars </h1>
+    <a href="index.html">Return to index</a>
+    <script>
+        var myCar = "fiat";
+        const carArray = ["fiat"];
+        //The following is an Object definition in JavaScript
+        const carObject = {
+            type: "Fiat", model: "500", color: "pepermint",
+            fullDescription: function () {
+                return this.type + " " + this.model + " in color " + this.color;
+            }
+        };
+
+        const cars = [
+            { type: "Renault", year: 2002 } , { type: "Fiat", year: 2019 }, { type: "Ford", year: 1979 }
+        ];
+        document.getElementById("demo1").innerHTML += "is a car with <br/>";
+        document.getElementById("demo1").innerHTML += "make    model     color<br/>";
+        //referencing it as an associative array
+        document.getElementById("demo1").innerHTML += carObject['type'] + "   " + carObject['model'] + "    " + carObject['color'];
+        //referencing it as an object
+        document.getElementById("demo2").innerHTML += " " + carObject.type + "     " + carObject.model + "     " + carObject.color;
+        document.getElementById("demo3").innerHTML += " " + carObject.fullDescription();
+        //cars.sort(function (a, b) { return b.year - a.year;});
+        cars.sort(function (a, b) {
+            let x = a.type.toLowerCase();
+            let y = b.type.toLowerCase();
+            if (x < y) { return -1; }
+            if (y < x) { return +1; }
+            return 0;
+        }
+        );
+        document.getElementById("demo4").innerHTML += " " + cars[0].type + " "+ cars[1].type + " " + cars[2].type;
+    </script>
+</body>
+</html>
