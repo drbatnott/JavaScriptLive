@@ -18,6 +18,9 @@
         function myMappingScript2(value, index, array) {
             return value ** index;
         }
+        function LessThan32Filter(value, index, array) {
+            return value < 32;
+        }
     </script>
 </head>
 <body>
@@ -26,7 +29,7 @@
     <h1 id="demo3">Yet Another Line</h1>
     <h1 id="demo4">One More Line</h1>
     <h1 id="demo5">Nothing Needed</h1>
-   
+    <h1 id="demo6">For the filtered array</h1>
 
     <a href="index.html">Return To Index</a>
     <script>
@@ -34,9 +37,11 @@
         const numberThings = [16, 32, 24, 96, 123, 8];
         const numberThingsSquared = numberThings.map(myMappingScript);
         const numberThingsToIndex = numberThings.map(myMappingScript2);
+        const numberThingsBelow32 = numberThings.filter(LessThan32Filter);
         document.getElementById("demo3").innerHTML = numberThings;
         document.getElementById("demo4").innerHTML = numberThingsSquared;
         document.getElementById("demo5").innerHTML = numberThingsToIndex;
+        document.getElementById("demo6").innerHTML += " " + numberThingsBelow32;
         let txt = "";
         stringThings.forEach(myFunction1);
         document.getElementById("demo1").innerHTML = txt;
